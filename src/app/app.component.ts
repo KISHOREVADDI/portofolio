@@ -7,6 +7,7 @@ import { AboutComponent } from './about/about.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { WorldComponent } from './world/world.component';
+import { AchievementsComponent } from './achievements/achievements.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
@@ -23,6 +24,7 @@ import { LoadingScreenComponent } from './loading-screen/loading-screen.componen
     SkillsComponent,
     ProjectsComponent,
     WorldComponent,
+    AchievementsComponent,
     ContactComponent,
     FooterComponent,
     LoadingScreenComponent

@@ -1,0 +1,18 @@
+<section class="achievements" id="achievements">
+    <p>ACHIEVEMENTS</p>
+    <h1>Certifications & Awards</h1>
+    <div class="achievements-container">
+        <div *ngFor="let achievement of achievements" class="achievement-card">
+
+            <div class="achievement-details">
+                <h3>{{ achievement.event }}</h3>
+                <h4>{{ achievement.title }}</h4>
+                <p class="description">{{ achievement.description }}</p>
+                <p class="organizer"><i class="fa-solid fa-building-columns"></i> {{ achievement.organizer }}</p>
+                <p class="date"><i class="fa-regular fa-calendar"></i> {{ achievement.date }}</p>
+                <a [href]="achievement.image" target="_blank" class="btn-view"><i class="fa-solid fa-eye"></i> View
+                    Certificate</a>
+            </div>
+        </div>
+    </div>
+</section>

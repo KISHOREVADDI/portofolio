@@ -1,0 +1,158 @@
+.achievements {
+    margin: 100px 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.achievements p {
+    padding-bottom: 20px;
+    font-size: 13px;
+    color: rgb(50, 50, 50);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.achievements h1 {
+    font-family: "Open Sans", sans-serif;
+    padding-bottom: 40px;
+}
+
+.achievements-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+}
+
+.achievement-card {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.achievement-image {
+    width: 100%;
+    height: 250px;
+    /* Adjust based on certificate aspect ratio */
+    overflow: hidden;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.achievement-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* or contain if you want to see full certificate without cropping */
+    transition: transform 0.5s ease;
+}
+
+.achievement-card:hover .achievement-image img {
+    transform: scale(1.05);
+}
+
+.achievement-details {
+    padding: 25px;
+}
+
+.achievement-details h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.achievement-details h4 {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.achievement-details .description {
+    color: #555;
+    margin-bottom: 15px;
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.achievement-details .organizer,
+.achievement-details .date {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: none;
+    letter-spacing: normal;
+    padding-bottom: 0;
+}
+
+/* Dark Mode Adjustments if needed, assuming light card for now to match certificate context, but can be dark */
+/* For dark theme consistency */
+.achievement-card {
+    background-color: #111;
+    border: 1px solid #222;
+}
+
+.achievement-details h3 {
+    color: #fff;
+}
+
+.achievement-details h4 {
+    color: #aaa;
+}
+
+.achievement-details .description {
+    color: #ccc;
+}
+
+.achievement-details .organizer,
+.achievement-details .date {
+    color: #888;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .achievements {
+        margin: 80px 20px;
+    }
+
+    .achievement-image {
+        height: 250px;
+    }
+}
+
+.btn-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.btn-view:hover {
+    background-color: #333;
+}
