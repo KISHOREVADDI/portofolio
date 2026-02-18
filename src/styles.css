@@ -777,16 +777,19 @@ body {
 
 /* Phone layout */
 @media (max-width: 768px) {
-  header {
-    display: none;
-  }
+  /* header {
+    display: none; 
+    Removed to show the new mobile header 
+  } */
 
   .home,
   .about,
   .project,
   .services,
-  .contact {
-    margin: 100px 20px;
+  .contact,
+  .world {
+    margin: 80px 20px 40px 20px;
+    /* Reduced top margin, added bottom */
   }
 
   .home-container,
@@ -815,25 +818,28 @@ body {
   .btn-send {
     width: 100%;
     text-align: center;
+    justify-content: center;
   }
 
   .follow ul {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
+    padding: 0;
   }
 
   .footer-links {
     flex-direction: column;
     gap: 15px;
+    padding: 0;
   }
 }
 
 @media (max-width: 1024px) {
 
-  header {
+  /* header {
     display: none;
-  }
+  } */
 
   .home,
   .about,
@@ -865,6 +871,8 @@ body {
     height: auto;
     margin-bottom: 20px;
     position: relative;
+    bottom: 0;
+    /* Reset the global bottom: 85px */
     z-index: 1;
   }
 
@@ -919,6 +927,24 @@ body {
   .contact-form {
     width: 100%;
     max-width: 400px;
+  }
+
+  /* Loading Screen Responsive */
+  .loading-content h1 {
+    font-size: 24px;
+  }
+
+  .loading-content h2 {
+    font-size: 16px;
+  }
+
+  .main-icon {
+    font-size: 4em !important;
+    /* Scale down main icon */
+  }
+
+  .sub-icons i {
+    font-size: 1.5em !important;
   }
 
   html,

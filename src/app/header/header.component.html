@@ -1,21 +1,34 @@
 <header class="header-list">
     <div class="div-list ">
-        <ul class="ul-list">
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger" [class.open]="isMenuOpen" (click)="toggleMenu()" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Overlay for mobile menu -->
+        <div class="overlay" [class.active]="isMenuOpen" (click)="toggleMenu()"></div>
+
+        <ul class="ul-list" [class.active]="isMenuOpen">
             <li class="active">
                 <i class="fa-solid fa-home"></i>
-                <a href="#home" (click)="scrollTo('home', $event)">Home</a>
+                <a href="#home" (click)="scrollTo('home', $event); toggleMenu()">Home</a>
             </li>
             <li>
                 <i class="fa-solid fa-address-card"></i>
-                <a href="#about" (click)="scrollTo('about', $event)">About</a>
+                <a href="#about" (click)="scrollTo('about', $event); toggleMenu()">About</a>
             </li>
             <li>
                 <i class="fa-solid fa-code"></i>
-                <a href="#skills" (click)="scrollTo('skills', $event)">Skills</a>
+                <a href="#skills" (click)="scrollTo('skills', $event); toggleMenu()">Skills</a>
             </li>
-            <li><a href="#project" class="nav-link"><i class="fa-solid fa-folder-open"></i> Projects</a></li>
-            <li><a href="#world" class="nav-link"><i class="fa-solid fa-globe"></i> World</a></li>
-            <li><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+            <li><a href="#project" class="nav-link" (click)="scrollTo('project', $event); toggleMenu()"><i
+                        class="fa-solid fa-folder-open"></i> Projects</a></li>
+            <li><a href="#world" class="nav-link" (click)="scrollTo('world', $event); toggleMenu()"><i
+                        class="fa-solid fa-globe"></i> World</a></li>
+            <li><a href="#contact" class="nav-link" (click)="scrollTo('contact', $event); toggleMenu()"><i
+                        class="fa-solid fa-envelope"></i> Contact</a></li>
         </ul>
     </div>
 </header>

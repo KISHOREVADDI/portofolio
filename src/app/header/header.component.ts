@@ -9,6 +9,11 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 
   scrollTo(sectionId: string, event: Event) {
     event.preventDefault();
@@ -24,6 +29,7 @@ export class HeaderComponent {
       });
 
       this.updateActiveLink(sectionId);
+      this.isMenuOpen = false; // Close menu on scroll
     }
   }
 
