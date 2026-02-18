@@ -1,0 +1,37 @@
+.footer-slogan {
+    margin-top: 20px;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 14px;
+    color: #888;
+    cursor: default;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.footer-slogan .highlight {
+    background: linear-gradient(90deg, #00f0ff, #00ff9d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-slogan:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.footer-slogan:hover .highlight {
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px rgba(0, 240, 255, 0.2);
+    }
+
+    to {
+        text-shadow: 0 0 15px rgba(0, 255, 157, 0.6);
+    }
+}
