@@ -1,0 +1,14 @@
+<app-loading-screen (loadingComplete)="onLoadingComplete()"></app-loading-screen>
+
+<div id="main-page" [class.visible]="isMainContentVisible">
+  <app-header></app-header>
+  <main>
+    <app-home></app-home>
+    <app-about></app-about>
+    <app-skills></app-skills>
+    <app-projects></app-projects>
+    <app-world></app-world>
+    <app-contact></app-contact>
+  </main>
+  <app-footer></app-footer>
+</div>

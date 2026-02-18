@@ -1,0 +1,13 @@
+<section class="world" id="world">
+    <p>WORLD</p>
+    <h1>Coding Profiles</h1>
+    <div class="world-container">
+        <a *ngFor="let profile of profiles" [href]="profile.link" target="_blank" class="world-card">
+            <div class="icon-wrapper">
+                <i [class]="profile.icon"></i>
+            </div>
+            <h3>{{ profile.name }}</h3>
+            <p>{{ profile.description }}</p>
+        </a>
+    </div>
+</section>

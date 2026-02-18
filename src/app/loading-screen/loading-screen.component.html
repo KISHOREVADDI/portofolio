@@ -1,0 +1,17 @@
+<div id="loading-screen" *ngIf="isLoading">
+    <div class="loading-content">
+        <i class="fa-solid fa-laptop-code fa-5x main-icon" [class.hidden]="!showMainIcon"
+            [class.fall]="showMainIcon"></i>
+
+        <h1 id="loading-text" [class.hidden]="!showLoadingText" [class.fall]="showLoadingText">MY PROFILE</h1>
+
+        <div class="sub-icons">
+            <i class="fa-brands fa-github fa-2x" [class.hidden]="!showSubIcons[0]" [class.fall]="showSubIcons[0]"></i>
+            <i class="fa-solid fa-code fa-2x" [class.hidden]="!showSubIcons[1]" [class.fall]="showSubIcons[1]"></i>
+            <i class="fa-solid fa-user fa-2x" [class.hidden]="!showSubIcons[2]" [class.fall]="showSubIcons[2]"></i>
+        </div>
+
+        <h2 id="designer-text" [class.hidden]="!showDesignerText" [class.fall]="showDesignerText">Designed by Kishore
+        </h2>
+    </div>
+</div>
