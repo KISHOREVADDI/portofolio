@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  words = ["Java Full Stack Developer", "Cybersecurity Specialist", "Angular Developer", "Backend Engineer"];
+  words = ["Java Full Stack learner", "Cybersecurity Practitioner", "Angular Developer", "Backend Engineer"];
   wordIndex = 0;
   charIndex = 0;
   isDeleting = false;
