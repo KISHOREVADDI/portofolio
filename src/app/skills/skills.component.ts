@@ -20,7 +20,7 @@ export class SkillsComponent {
     },
     {
       category: 'Tools & Security',
-      items: ['Kali Linux', 'Burp Suite', 'Wireshark', 'VS Code', 'GitHub', 'Firebase']
+      items: ['Kali Linux', 'Burp Suite', 'Postman', 'VS Code', 'GitHub', 'Firebase', 'Git', 'Nmap']
     }
   ];
 }
