@@ -20,8 +20,17 @@
             </div>
         </div>
 
-        <!-- Alert 3 -->
-        <div class="alert-card status" [class.visible]="showAlert3">
+        <!-- Alert 3 — Desktop Recommendation -->
+        <div class="alert-card desktop" [class.visible]="showAlert3">
+            <span class="alert-icon">🖥️</span>
+            <div>
+                <div class="alert-label">System Recommendation</div>
+                <div class="alert-text">Use Desktop for the Best Experience</div>
+            </div>
+        </div>
+
+        <!-- Alert 4 — Status -->
+        <div class="alert-card status" [class.visible]="showAlert4">
             <span class="alert-icon">⚡</span>
             <div>
                 <div class="alert-label">System Status</div>

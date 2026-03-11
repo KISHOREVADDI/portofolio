@@ -15,15 +15,16 @@ export class LoadingScreenComponent implements OnInit {
   showAlert1 = false;
   showAlert2 = false;
   showAlert3 = false;
+  showAlert4 = false;
   showWelcome = false;
   progressWidth = 0;
 
   ngOnInit() {
-    // Start progress animation
-    setTimeout(() => { this.showAlert1 = true; this.progressWidth = 20; }, 200);
-    setTimeout(() => { this.showAlert2 = true; this.progressWidth = 50; }, 1200);
-    setTimeout(() => { this.showAlert3 = true; this.progressWidth = 80; }, 2200);
-    setTimeout(() => { this.showWelcome = true; this.progressWidth = 100; }, 3200);
+    setTimeout(() => { this.showAlert1 = true; this.progressWidth = 15; }, 200);
+    setTimeout(() => { this.showAlert2 = true; this.progressWidth = 40; }, 1100);
+    setTimeout(() => { this.showAlert3 = true; this.progressWidth = 65; }, 2000);
+    setTimeout(() => { this.showAlert4 = true; this.progressWidth = 85; }, 2900);
+    setTimeout(() => { this.showWelcome = true;  this.progressWidth = 100; }, 3800);
 
     setTimeout(() => {
       this.loadingComplete.emit();
@@ -32,6 +33,6 @@ export class LoadingScreenComponent implements OnInit {
         screen.style.opacity = '0';
         setTimeout(() => { this.isLoading = false; }, 600);
       }
-    }, 4500);
+    }, 5400);
   }
 }
