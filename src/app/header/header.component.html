@@ -35,10 +35,18 @@
         </ul>
 
         <!-- Floating Music Toggle -->
-        <div class="music-container" [class.playing]="isPlaying">
-            <span class="music-text">For a peaceful experience...</span>
+        <div class="music-container" [class.playing]="isPlaying" [class.hidden]="!isMusicVisible">
+            <span class="music-text">For a Peaceful Experience...</span>
             <button class="music-toggle" (click)="toggleMusic()" aria-label="Toggle background music">
-                <i class="fa-solid" [class.fa-music]="!isPlaying" [class.fa-volume-high]="isPlaying"></i>
+                <!-- SVG Equalizer / Waveform Icon -->
+                <svg class="equalizer-icon" [class.eq-playing]="isPlaying" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect class="bar bar-1" x="1" y="10" width="3" height="4" rx="1.5" />
+                    <rect class="bar bar-2" x="6" y="6" width="3" height="12" rx="1.5" />
+                    <rect class="bar bar-3" x="11" y="3" width="3" height="18" rx="1.5" />
+                    <rect class="bar bar-4" x="16" y="6" width="3" height="12" rx="1.5" />
+                    <rect class="bar bar-5" x="21" y="10" width="3" height="4" rx="1.5" />
+                </svg>
             </button>
             <div class="music-notes" *ngIf="isPlaying">
                 <i class="fa-solid fa-music note-1"></i>

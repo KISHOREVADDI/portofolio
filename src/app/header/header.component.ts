@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 export class HeaderComponent {
   isMenuOpen = false;
   isPlaying = false;
+  isMusicVisible = true;
 
   @ViewChild('bgMusic') bgMusic!: ElementRef<HTMLAudioElement>;
 
@@ -62,8 +63,13 @@ export class HeaderComponent {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
+    const scrollY = window.scrollY;
+
+    // Fade out music button when scrolling down
+    this.isMusicVisible = scrollY < 100;
+
     const sections = document.querySelectorAll('section');
-    let scrollPos = window.scrollY + 100;
+    let scrollPos = scrollY + 100;
 
     sections.forEach(section => {
       if (section instanceof HTMLElement) {
@@ -76,8 +82,6 @@ export class HeaderComponent {
         }
       }
     });
-
-    // Also handle Back to Top visibility if we implement it here, or distinct component
   }
 
 }

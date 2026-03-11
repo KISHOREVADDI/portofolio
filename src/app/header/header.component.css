@@ -114,13 +114,19 @@
 .music-container {
     position: fixed;
     top: 85px;
-    /* Positioned just below the header links */
     right: 40px;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     gap: 15px;
     z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
+
+.music-container.hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .music-text {
@@ -174,6 +180,31 @@
 .music-toggle i {
     color: #fff;
     /* Ensure FontAwesome icon is white against black button */
+}
+
+/* SVG Equalizer Icon */
+.equalizer-icon {
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+}
+
+.equalizer-icon .bar {
+    fill: #fff;
+    transform-origin: bottom center;
+    transition: height 0.3s ease;
+}
+
+/* Animated bars when playing */
+.equalizer-icon.eq-playing .bar-1 { animation: eqBounce 0.8s infinite ease-in-out 0s; }
+.equalizer-icon.eq-playing .bar-2 { animation: eqBounce 0.8s infinite ease-in-out 0.15s; }
+.equalizer-icon.eq-playing .bar-3 { animation: eqBounce 0.8s infinite ease-in-out 0.3s; }
+.equalizer-icon.eq-playing .bar-4 { animation: eqBounce 0.8s infinite ease-in-out 0.45s; }
+.equalizer-icon.eq-playing .bar-5 { animation: eqBounce 0.8s infinite ease-in-out 0.6s; }
+
+@keyframes eqBounce {
+    0%, 100% { transform: scaleY(1); }
+    50%       { transform: scaleY(0.3); }
 }
 
 .music-toggle:hover {
@@ -237,9 +268,9 @@
 @media (max-width: 900px) {
     .music-container {
         position: fixed;
-        top: 20px;
+        top: 15px;
         right: 70px;
-        /* Adjust spacing opposite to the hamburger icon */
+        gap: 8px;
     }
 
     .music-text {
@@ -247,8 +278,43 @@
     }
 
     .music-toggle {
-        width: 35px;
-        height: 35px;
-        font-size: 14px;
+        width: 34px;
+        height: 34px;
+        font-size: 13px;
+    }
+
+    .music-notes i {
+        font-size: 11px;
+    }
+
+    @keyframes floatNote {
+        0% {
+            transform: translate(0, 0) scale(0.5);
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        100% {
+            transform: translate(-20px, -28px) scale(1.1) rotate(-20deg);
+            opacity: 0;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .music-container {
+        top: 12px;
+        right: 60px;
+    }
+
+    .music-toggle {
+        width: 30px;
+        height: 30px;
+        font-size: 11px;
+    }
+
+    .music-notes i {
+        font-size: 9px;
     }
 }

@@ -12,55 +12,26 @@ export class LoadingScreenComponent implements OnInit {
   @Output() loadingComplete = new EventEmitter<void>();
 
   isLoading = true;
-  showMainIcon = false;
-  showLoadingText = false;
-  showSubIcons = [false, false, false];
-  showDesignerText = false;
+  showAlert1 = false;
+  showAlert2 = false;
+  showAlert3 = false;
+  showWelcome = false;
+  progressWidth = 0;
 
   ngOnInit() {
-    // Sequence based on original main.js
-    setTimeout(() => {
-      this.showLoadingText = true;
-    }, 0);
+    // Start progress animation
+    setTimeout(() => { this.showAlert1 = true; this.progressWidth = 20; }, 200);
+    setTimeout(() => { this.showAlert2 = true; this.progressWidth = 50; }, 1200);
+    setTimeout(() => { this.showAlert3 = true; this.progressWidth = 80; }, 2200);
+    setTimeout(() => { this.showWelcome = true; this.progressWidth = 100; }, 3200);
 
     setTimeout(() => {
-      this.showMainIcon = true;
-    }, 800);
-
-    setTimeout(() => {
-        this.showSubIcons[0] = true;
-    }, 1600);
-    setTimeout(() => {
-        this.showSubIcons[1] = true;
-    }, 2000);
-    setTimeout(() => {
-        this.showSubIcons[2] = true;
-    }, 2400);
-
-    setTimeout(() => {
-      this.showDesignerText = true;
-    }, 2800);
-
-    setTimeout(() => {
-      // Fade out logic is handled by CSS transition on the host or parent usually, 
-      // but here we can just emit the event and let AppComponent handle the main page reveal.
-      // However, to mimic the exact behavior, we might want to fade out 'this' component.
-      
-      // Let's emit first.
       this.loadingComplete.emit();
-      
-      // And then hide self after fade out
-      // For now, let's assuming AppComponent handles the "visible" class on main content
-      // and we just hide this component after a short delay for smooth transition if needed.
-      // The original had loadingScreen.style.opacity = '0' then display 'none'.
-      
       const screen = document.getElementById('loading-screen');
-      if(screen) {
+      if (screen) {
         screen.style.opacity = '0';
-        setTimeout(() => {
-          this.isLoading = false; 
-        }, 500);
+        setTimeout(() => { this.isLoading = false; }, 600);
       }
-    }, 4000);
+    }, 4500);
   }
 }
