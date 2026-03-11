@@ -1,0 +1,84 @@
+/* Music Container inside Contact Section */
+.contact-music-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+    width: 100%;
+}
+
+.music-text {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #444;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transition: opacity 0.5s ease-out, transform 0.5s ease;
+    transform: translateX(0);
+}
+
+.contact-music-container.playing .music-text {
+    opacity: 0;
+    transform: translateX(20px);
+    pointer-events: none;
+}
+
+/* Music Toggle Styling */
+.music-toggle {
+    background: #000;
+    border: none;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.music-toggle i {
+    color: #fff;
+    /* Ensure FontAwesome icon is white against black button */
+}
+
+.music-toggle:hover {
+    transform: scale(1.1);
+    background: #222;
+}
+
+.contact-music-container.playing .music-toggle {
+    background: #474af0;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(71, 74, 240, 0.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(71, 74, 240, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(71, 74, 240, 0);
+    }
+}
+
+@media (max-width: 900px) {
+    .music-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+    }
+}

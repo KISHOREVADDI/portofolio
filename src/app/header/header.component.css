@@ -109,3 +109,146 @@
         display: block;
     }
 }
+
+/* Music Container */
+.music-container {
+    position: fixed;
+    top: 85px;
+    /* Positioned just below the header links */
+    right: 40px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.music-text {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #444;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transition: opacity 0.5s ease-out, transform 0.5s ease;
+    transform: translateX(0);
+    animation: floatText 3s ease-in-out infinite;
+}
+
+@keyframes floatText {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.music-container.playing .music-text {
+    opacity: 0;
+    transform: translateX(-20px);
+    pointer-events: none;
+    animation: none;
+}
+
+
+/* Music Toggle Styling */
+.music-toggle {
+    background: #000;
+    border: none;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.music-toggle i {
+    color: #fff;
+    /* Ensure FontAwesome icon is white against black button */
+}
+
+.music-toggle:hover {
+    transform: scale(1.1);
+    background: #222;
+}
+
+.music-container.playing .music-toggle {
+    background: #000;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+/* Music Notes Animations */
+.music-notes {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    pointer-events: none;
+}
+
+.music-notes i {
+    position: absolute;
+    font-size: 14px;
+    color: #474af0;
+    opacity: 0;
+}
+
+.note-1 { animation: floatNote 2s infinite ease-out 0s; }
+.note-2 { animation: floatNote 2s infinite ease-out 0.6s; }
+.note-3 { animation: floatNote 2s infinite ease-out 1.2s; }
+
+@keyframes floatNote {
+    0% {
+        transform: translate(0, 0) scale(0.5);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-30px, -40px) scale(1.5) rotate(-20deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .music-container {
+        position: fixed;
+        top: 20px;
+        right: 70px;
+        /* Adjust spacing opposite to the hamburger icon */
+    }
+
+    .music-text {
+        display: none;
+    }
+
+    .music-toggle {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+}

@@ -10,6 +10,7 @@
         <!-- Overlay for mobile menu -->
         <div class="overlay" [class.active]="isMenuOpen" (click)="toggleMenu()"></div>
 
+
         <ul class="ul-list" [class.active]="isMenuOpen">
             <li class="active">
                 <i class="fa-solid fa-home"></i>
@@ -32,5 +33,25 @@
             <li><a href="#contact" class="nav-link" (click)="scrollTo('contact', $event); toggleMenu()"><i
                         class="fa-solid fa-envelope"></i> Contact</a></li>
         </ul>
+
+        <!-- Floating Music Toggle -->
+        <div class="music-container" [class.playing]="isPlaying">
+            <span class="music-text">For a peaceful experience...</span>
+            <button class="music-toggle" (click)="toggleMusic()" aria-label="Toggle background music">
+                <i class="fa-solid" [class.fa-music]="!isPlaying" [class.fa-volume-high]="isPlaying"></i>
+            </button>
+            <div class="music-notes" *ngIf="isPlaying">
+                <i class="fa-solid fa-music note-1"></i>
+                <i class="fa-solid fa-music note-2"></i>
+                <i class="fa-solid fa-music note-3"></i>
+            </div>
+        </div>
     </div>
 </header>
+
+<!-- Global Background Music -->
+<audio #bgMusic loop>
+    <source
+        src="assets/ogbgm.mpeg"
+        type="audio/mpeg">
+</audio>

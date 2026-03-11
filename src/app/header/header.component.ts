@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,9 +10,26 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent {
   isMenuOpen = false;
+  isPlaying = false;
+
+  @ViewChild('bgMusic') bgMusic!: ElementRef<HTMLAudioElement>;
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  toggleMusic() {
+    if (!this.bgMusic) return;
+
+    const audio = this.bgMusic.nativeElement;
+    if (this.isPlaying) {
+      audio.pause();
+      this.isPlaying = false;
+    } else {
+      audio.volume = 0.3; // Default pleasant volume
+      audio.play().catch(e => console.error("Audio playback prevented:", e));
+      this.isPlaying = true;
+    }
   }
 
   scrollTo(sectionId: string, event: Event) {

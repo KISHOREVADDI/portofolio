@@ -148,6 +148,9 @@
     background-color: #000;
     color: #fff;
     text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
     border-radius: 25px;
     font-size: 0.9rem;
     transition: background 0.3s ease;
@@ -155,4 +158,185 @@
 
 .btn-view:hover {
     background-color: #333;
+}
+
+/* Modal styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    width: 900px;
+    max-height: 90%;
+    background-color: #111;
+    border: 1px solid #333;
+    border-radius: 12px;
+    transform: scale(0.8) translateY(20px);
+    opacity: 0;
+    animation: popIn 0.5s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+    .modal-body {
+        flex-direction: row;
+        overflow-y: visible;
+    }
+}
+
+.modal-image-container {
+    flex: 1.5;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 60vh;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+    display: block;
+}
+
+.modal-info {
+    flex: 1;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #111;
+    color: #fff;
+}
+
+.modal-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    color: #fff;
+    font-family: inherit;
+}
+
+.modal-info h3 {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-family: inherit;
+}
+
+.modal-info .description {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.modal-info .organizer,
+.modal-info .date {
+    font-size: 0.95rem;
+    color: #888;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.modal-info .organizer i,
+.modal-info .date i {
+    color: #aaa;
+    width: 20px;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #aaa;
+    font-size: 35px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    line-height: 1;
+    z-index: 10;
+}
+
+.close-btn:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Base animations for opening */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Closing animations */
+.modal-overlay.closing {
+    animation: fadeOut 0.4s forwards;
+}
+
+.modal-overlay.closing .modal-content {
+    animation: popOut 0.4s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes popOut {
+    from {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(0.8) translateY(20px);
+        opacity: 0;
+    }
 }

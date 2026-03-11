@@ -19,4 +19,23 @@ export class AchievementsComponent {
       image: 'assets/hackathonpartcipationcert.jpeg' // Updated with user provided image
     }
   ];
+
+  selectedAchievement: any = null;
+  isClosing: boolean = false;
+
+  openModal(achievement: any): void {
+    this.selectedAchievement = achievement;
+    this.isClosing = false;
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  }
+
+  closeModal(): void {
+    this.isClosing = true;
+
+    setTimeout(() => {
+      this.selectedAchievement = null;
+      this.isClosing = false;
+      document.body.style.overflow = 'auto'; // Restore background scrolling
+    }, 400); // Wait for the fade-out/pop-out animation to finish
+  }
 }

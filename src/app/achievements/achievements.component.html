@@ -10,8 +10,28 @@
                 <p class="description">{{ achievement.description }}</p>
                 <p class="organizer"><i class="fa-solid fa-building-columns"></i> {{ achievement.organizer }}</p>
                 <p class="date"><i class="fa-regular fa-calendar"></i> {{ achievement.date }}</p>
-                <a [href]="achievement.image" target="_blank" class="btn-view"><i class="fa-solid fa-eye"></i> View
-                    Certificate</a>
+                <button (click)="openModal(achievement)" class="btn-view"><i class="fa-solid fa-eye"></i> View
+                    Certificate</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image + Info Modal -->
+    <div class="modal-overlay" *ngIf="selectedAchievement" [class.closing]="isClosing" (click)="closeModal()">
+        <div class="modal-content" (click)="$event.stopPropagation()">
+            <span class="close-btn" (click)="closeModal()">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img [src]="selectedAchievement.image" alt="Certificate" class="modal-image">
+                </div>
+                <div class="modal-info">
+                    <h2>{{ selectedAchievement.event }}</h2>
+                    <h3>{{ selectedAchievement.title }}</h3>
+                    <p class="description">{{ selectedAchievement.description }}</p>
+                    <p class="organizer"><i class="fa-solid fa-building-columns"></i> {{ selectedAchievement.organizer
+                        }}</p>
+                    <p class="date"><i class="fa-regular fa-calendar"></i> {{ selectedAchievement.date }}</p>
+                </div>
             </div>
         </div>
     </div>
