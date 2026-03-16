@@ -1,31 +1,31 @@
 <section class="home" id="home">
-    <p class="home-p">
+    <p class="home-p" [animateOnScroll]="'anim-slide-down'" [animDelay]="100">
         <span class="home-s"> </span>Available for freelance work
     </p>
     <div class="home-container">
         <div class="home-section">
             <div class="info-home">
-                <h1>Hi, I'm Kishore...!</h1>
-                <h3><span class="typing-text"></span><span class="cursor">|</span></h3>
-                <div class="info-p">
+                <h1 [animateOnScroll]="'anim-fade-left'" [animDelay]="150">Hi, I'm Kishore...!</h1>
+                <h3 [animateOnScroll]="'anim-fade-left'" [animDelay]="250"><span class="typing-text"></span><span class="cursor">|</span></h3>
+                <div class="info-p" [animateOnScroll]="'anim-fade-left'" [animDelay]="350">
                     <p>Proactive Computer Science student specializing in Cybersecurity, with </p>
                     <p>strong skills in secure backend development and Java Full Stack.</p>
                 </div>
-                <div class="info-p2">
+                <div class="info-p2" [animateOnScroll]="'anim-fade-up'" [animDelay]="400">
                     <p><i class="fa-solid fa-location-dot"></i> TadepalliGudem, India</p>
                     <p><i class="fa-solid fa-briefcase"></i> Available Now</p>
                 </div>
-                <div class="btnn">
+                <div class="btnn" [animateOnScroll]="'anim-fade-up'" [animDelay]="500">
                     <button class="btn-home1" (click)="scrollTo('contact')"><i class="fa-solid fa-arrow-right"></i> Hire
                         Me</button>
-                    <a href="assets/resume.pdf" download="Kishore_Vaddi_Resume.pdf" class="btn-home2"><i
+                    <a href="assets/kishore vaddi resume.pdf" download="Kishore_Vaddi_Resume.pdf" class="btn-home2"><i
                             class="fa-solid fa-download"></i>
                         Resume</a>
                 </div>
-                <div class="hhr">
+                <div class="hhr" [animateOnScroll]="'anim-fade-up'" [animDelay]="550">
                     <hr>
                 </div>
-                <div class="follow">
+                <div class="follow" [animateOnScroll]="'anim-bounce-up'" [animDelay]="650">
                     <p class="followw">Follow me:</p>
                     <ul>
                         <li><a href="https://github.com/KISHOREVADDI" target="_blank"><i
@@ -38,6 +38,6 @@
                 </div>
             </div>
         </div>
-        <img src="assets/images/img2.jpg" alt="">
+        <img src="assets/images/img2.jpg" alt="" [animateOnScroll]="'anim-fade-right'" [animDelay]="300">
     </div>
 </section>

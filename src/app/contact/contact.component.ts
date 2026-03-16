@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
+import { AnimateOnScrollDirective } from '../shared/animate-on-scroll.directive';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AnimateOnScrollDirective],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
+
 export class ContactComponent {
 
   public sendEmail(e: Event) {

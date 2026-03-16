@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AnimateOnScrollDirective } from '../shared/animate-on-scroll.directive';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AnimateOnScrollDirective],
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css']
 })
+
 export class SkillsComponent {
   skills = [
     {

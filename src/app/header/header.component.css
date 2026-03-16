@@ -318,3 +318,33 @@
         font-size: 9px;
     }
 }
+
+/* ============================================================
+   HEADER ENTRANCE ANIMATION (load-based, CSS-only)
+   ============================================================ */
+@keyframes headerSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ul-list {
+    animation: headerSlideDown 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+.ul-list li:nth-child(1) { animation: headerSlideDown 0.5s 0.10s cubic-bezier(0.22, 0.61, 0.36, 1) both; }
+.ul-list li:nth-child(2) { animation: headerSlideDown 0.5s 0.20s cubic-bezier(0.22, 0.61, 0.36, 1) both; }
+.ul-list li:nth-child(3) { animation: headerSlideDown 0.5s 0.30s cubic-bezier(0.22, 0.61, 0.36, 1) both; }
+.ul-list li:nth-child(4) { animation: headerSlideDown 0.5s 0.40s cubic-bezier(0.22, 0.61, 0.36, 1) both; }
+.ul-list li:nth-child(5) { animation: headerSlideDown 0.5s 0.50s cubic-bezier(0.22, 0.61, 0.36, 1) both; }
+.ul-list li:nth-child(6) { animation: headerSlideDown 0.5s 0.60s cubic-bezier(0.22, 0.61, 0.36, 1) both; }
+.ul-list li:nth-child(7) { animation: headerSlideDown 0.5s 0.70s cubic-bezier(0.22, 0.61, 0.36, 1) both; }
+
+.music-container {
+    animation: headerSlideDown 0.6s 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}

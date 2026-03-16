@@ -957,3 +957,72 @@ body {
     overflow-x: hidden;
   }
 }
+
+/* ============================================================
+   GLOBAL SCROLL-TRIGGERED ANIMATION SYSTEM
+   Used by AnimateOnScrollDirective + component CSS
+   ============================================================ */
+
+/* Hidden state applied before element is in view */
+.anim-hidden {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+/* --- Keyframes --- */
+@keyframes animFadeUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes animFadeLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes animFadeRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes animScaleIn {
+  from { opacity: 0; transform: scale(0.75); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes animSlideDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes animBounceUp {
+  0%   { opacity: 0; transform: translateY(40px); }
+  60%  { transform: translateY(-10px); }
+  80%  { transform: translateY(5px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Utility animation classes (applied by directive) --- */
+.anim-fade-up {
+  animation: animFadeUp 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+.anim-fade-left {
+  animation: animFadeLeft 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+.anim-fade-right {
+  animation: animFadeRight 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+.anim-scale-in {
+  animation: animScaleIn 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+.anim-slide-down {
+  animation: animSlideDown 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+.anim-bounce-up {
+  animation: animBounceUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}

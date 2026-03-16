@@ -1,15 +1,15 @@
 <section class="about" id="about">
-    <p id="about">ABOUT ME</p>
-    <div class="title">
+    <p id="about" [animateOnScroll]="'anim-slide-down'" [animDelay]="0">ABOUT ME</p>
+    <div class="title" [animateOnScroll]="'anim-fade-left'" [animDelay]="100">
         <h1>Building Meaningful</h1>
         <h1>Digital Experiences</h1>
     </div>
-    <div class="hrrr">
+    <div class="hrrr" [animateOnScroll]="'anim-fade-left'" [animDelay]="200">
         <hr>
     </div>
     <div class="about-container">
         <div class="info-about">
-            <div class="about-info">
+            <div class="about-info" [animateOnScroll]="'anim-fade-up'" [animDelay]="150">
                 <p>
                     I'm a proactive Computer Science student specializing in Cybersecurity, with strong skills in secure
                     backend development and Java Full Stack.
@@ -21,22 +21,22 @@
                     about developing secure and scalable applications.
                 </p>
             </div>
-            <h2>What Drives Me</h2>
+            <h2 [animateOnScroll]="'anim-fade-up'" [animDelay]="250">What Drives Me</h2>
             <div class="card">
-                <div class="c1">
+                <div class="c1" [animateOnScroll]="'anim-scale-in'" [animDelay]="300">
                     <h3><i class="fa-solid fa-code"></i> Skills</h3>
                     <p>Java, Spring Boot, Angular, React, MySQL</p>
                 </div>
-                <div class="c1">
+                <div class="c1" [animateOnScroll]="'anim-scale-in'" [animDelay]="450">
                     <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
                     <p>GIET (CGPA 8.3)<br>Dr. SRK & KSR (82.1%)</p>
                 </div>
-                <div class="c1">
+                <div class="c1" [animateOnScroll]="'anim-scale-in'" [animDelay]="600">
                     <h3><i class="fa-solid fa-folder-open"></i> Projects</h3>
                     <p>Mini E-Commerce, Farming Marketplace, Portfolio</p>
                 </div>
             </div>
         </div>
-        <img src="assets/images/img.jpg" alt="">
+        <img src="assets/images/img.jpg" alt="" [animateOnScroll]="'anim-fade-right'" [animDelay]="200">
     </div>
 </section>

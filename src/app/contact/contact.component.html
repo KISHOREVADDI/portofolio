@@ -1,8 +1,8 @@
 <section class="contact" id="contact">
-    <p>CONTACT</p>
-    <h1>Get in Touch with Us</h1>
+    <p [animateOnScroll]="'anim-slide-down'" [animDelay]="0">CONTACT</p>
+    <h1 [animateOnScroll]="'anim-fade-up'" [animDelay]="100">Get in Touch with Us</h1>
     <div class="contact-content">
-        <div class="contact-info slide-in-left">
+        <div class="contact-info" [animateOnScroll]="'anim-fade-left'" [animDelay]="200">
             <p>I'm always open to discuss exciting projects and new opportunities. Let's collaborate!</p>
             <div class="contact-details">
                 <div class="contact-item">
@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <div class="contact-form slide-in-right">
+        <div class="contact-form" [animateOnScroll]="'anim-fade-right'" [animDelay]="300">
             <form id="contact-form" (submit)="sendEmail($event)">
                 <div class="form-group">
                     <input type="text" placeholder="Your Name" required name="user_name">
