@@ -18,6 +18,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   typingSpeed = 100;
   displayedText = '';
   timeoutId: any;
+  isResumeExpanded = false;
+
+  toggleResume() {
+    this.isResumeExpanded = !this.isResumeExpanded;
+  }
 
   ngOnInit() {
     this.type();

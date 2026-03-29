@@ -16,11 +16,20 @@
                     <p><i class="fa-solid fa-briefcase"></i> Available Now</p>
                 </div>
                 <div class="btnn" [animateOnScroll]="'anim-fade-up'" [animDelay]="500">
-                    <button class="btn-home1" (click)="scrollTo('contact')"><i class="fa-solid fa-arrow-right"></i> Hire
-                        Me</button>
-                    <a href="assets/kishore vaddi resume.pdf" download="Kishore_Vaddi_Resume.pdf" class="btn-home2"><i
-                            class="fa-solid fa-download"></i>
-                        Resume</a>
+                    <button class="btn-home1" (click)="scrollTo('contact')"><i class="fa-solid fa-arrow-right"></i> Hire Me</button>
+                    <div class="resume-button-group" [class.expanded]="isResumeExpanded">
+                        <span class="resume-label" (click)="toggleResume()">
+                            <i class="fa-regular fa-file-lines"></i> Resume 
+                            <i class="fa-solid fa-chevron-right" 
+                               [style.transform]="isResumeExpanded ? 'rotate(180deg)' : 'rotate(0)'" 
+                               style="font-size: 12px; margin-left: 6px; transition: transform 0.3s ease;">
+                            </i>
+                        </span>
+                        <div class="resume-actions" [class.show]="isResumeExpanded">
+                            <a href="assets/kishore%20vaddi%20resume.pdf" target="_blank" class="resume-action"><i class="fa-solid fa-eye"></i> View</a>
+                            <a href="assets/kishore%20vaddi%20resume.pdf" download="Kishore_Vaddi_Resume.pdf" class="resume-action"><i class="fa-solid fa-download"></i> Download</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="hhr" [animateOnScroll]="'anim-fade-up'" [animDelay]="550">
                     <hr>

@@ -115,6 +115,7 @@ header {
   display: flex;
   gap: 1rem;
   padding-bottom: 30px;
+  flex-wrap: wrap;
 }
 
 .btn-home1 {
@@ -142,6 +143,69 @@ header {
 
 .btn-home2:hover {
   background-color: #000000;
+  color: #fff;
+}
+
+/* Resume Side-by-Side Button Group */
+.resume-button-group {
+  display: inline-flex;
+  align-items: stretch;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.resume-button-group:hover {
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.resume-label {
+  padding: 10px 15px;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.resume-actions {
+  display: flex;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.resume-actions.show {
+  max-width: 300px;
+  opacity: 1;
+}
+
+.resume-action {
+  padding: 10px 15px;
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  border-left: 1px solid rgba(0,0,0,0.1);
+  font-size: 14px;
+  font-weight: 500;
+  background: #fff;
+  white-space: nowrap;
+}
+
+.resume-action:hover {
+  background-color: #000;
   color: #fff;
 }
 
