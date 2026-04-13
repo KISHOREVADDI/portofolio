@@ -1,0 +1,62 @@
+<div class="terminal-section">
+  <div class="terminal-section-title">
+    <h2>Try My Terminal</h2>
+    <p>Type a command to know more about me</p>
+  </div>
+
+  <div class="terminal-container" (click)="focusInput()">
+    <!-- Header Bar -->
+    <div class="terminal-header">
+      <div class="terminal-buttons">
+        <span class="btn close"></span>
+        <span class="btn minimize"></span>
+        <span class="btn maximize"></span>
+      </div>
+      <div class="terminal-tab">
+        <span class="tab-arrow">&gt;_</span>
+        <span class="tab-name">kishore&#64;portfolio</span>
+      </div>
+      <div class="terminal-lang">BASH</div>
+    </div>
+
+    <!-- Body -->
+    <div class="terminal-body" #terminalBody>
+      <!-- ASCII Art -->
+      <div class="ascii-art">
+        <pre>{{ asciiArt }}</pre>
+      </div>
+
+      <!-- Welcome Message -->
+      <div class="welcome-message">
+        <p>Welcome to Kishore's Terminal v12.3</p>
+        <p>Type <span class="cmd-name">"help"</span> to see available commands.</p>
+      </div>
+
+      <!-- Command History -->
+      <div *ngFor="let item of commandHistory" class="history-item">
+        <div class="prompt-line">
+          <span class="prompt">kishore&#64;portfolio:~$&nbsp;</span>
+          <span class="command-text">{{ item.command }}</span>
+        </div>
+        <div class="output">
+          <ng-container *ngFor="let line of item.output">
+            <div class="output-line" [innerHTML]="line"></div>
+          </ng-container>
+        </div>
+      </div>
+
+      <!-- Input Line -->
+      <div class="input-line">
+        <span class="prompt">kishore&#64;portfolio:~$&nbsp;</span>
+        <div class="custom-input-container">
+          <span class="typed-text">{{ currentInput }}</span>
+          <span class="cursor" [class.blink]="isFocused">█</span>
+          <input type="text" #terminalInput [(ngModel)]="currentInput" (keydown.enter)="executeCommand()"
+            (keydown.arrowup)="navigateHistory('up', $event)" (keydown.arrowdown)="navigateHistory('down', $event)"
+            (focus)="isFocused = true" (blur)="isFocused = false" class="hidden-input" autocomplete="off"
+            spellcheck="false" autofocus>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

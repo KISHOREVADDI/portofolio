@@ -11,6 +11,7 @@ import { AchievementsComponent } from './achievements/achievements.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
+import { TerminalComponent } from './terminal/terminal.component';
 
 @Component({
   selector: 'app-root',
@@ -27,7 +28,8 @@ import { LoadingScreenComponent } from './loading-screen/loading-screen.componen
     AchievementsComponent,
     ContactComponent,
     FooterComponent,
-    LoadingScreenComponent
+    LoadingScreenComponent,
+    TerminalComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
