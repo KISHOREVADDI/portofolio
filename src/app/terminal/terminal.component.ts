@@ -34,7 +34,7 @@ export class TerminalComponent implements AfterViewChecked, OnInit {
   commands: { [key: string]: string[] } = {
     'help': [
       'Available commands:',
-      '  <span class="cmd-name">whoami</span>     — Who is Kishore?',
+      '  <span class="cmd-name">whoami</span>     — Who is ...?',
       '  <span class="cmd-name">skills</span>     — Tech stack',
       '  <span class="cmd-name">projects</span>   — My projects',
       '  <span class="cmd-name">contact</span>    — Get in touch',
@@ -59,13 +59,13 @@ export class TerminalComponent implements AfterViewChecked, OnInit {
       '3. <strong>Portfolio Website</strong>          — Angular + Email.js + Vercel',
     ],
     'contact': [
-      'Email:    <a href="mailto:vadikishore@example.com" class="terminal-link">vadikishore@example.com</a>',
+      'Email:    <a href="mailto:kishorevaddi1204@gmail.com" class="terminal-link">kishorevaddi1204@gmail.com</a>',
       'GitHub:   <a href="https://github.com/KISHOREVADDI" target="_blank" class="terminal-link">github.com/KISHOREVADDI</a>',
       'LinkedIn: <a href="https://linkedin.com/in/kishorevaddi" target="_blank" class="terminal-link">linkedin.com/in/kishorevaddi</a>',
     ],
     'education': [
-      '<strong>B.Tech in Computer Science</strong>',
-      'Sri Venkateswara College of Pharmacy (SVCP)',
+      '<strong>B.Tech in Computer Science 2023-2027 </strong>',
+      'Godavari Institute Of Engineering and Technology (GIET)',
       'Specialization: Cybersecurity',
     ],
     'experience': [
@@ -76,7 +76,7 @@ export class TerminalComponent implements AfterViewChecked, OnInit {
     ],
   };
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   ngAfterViewChecked() {
     this.scrollToBottom();
@@ -141,6 +141,6 @@ export class TerminalComponent implements AfterViewChecked, OnInit {
   private scrollToBottom() {
     try {
       this.terminalBody.nativeElement.scrollTop = this.terminalBody.nativeElement.scrollHeight;
-    } catch (err) {}
+    } catch (err) { }
   }
 }

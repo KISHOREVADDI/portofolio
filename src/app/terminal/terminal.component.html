@@ -54,7 +54,7 @@
           <input type="text" #terminalInput [(ngModel)]="currentInput" (keydown.enter)="executeCommand()"
             (keydown.arrowup)="navigateHistory('up', $event)" (keydown.arrowdown)="navigateHistory('down', $event)"
             (focus)="isFocused = true" (blur)="isFocused = false" class="hidden-input" autocomplete="off"
-            spellcheck="false" autofocus>
+            spellcheck="false">
         </div>
       </div>
     </div>
