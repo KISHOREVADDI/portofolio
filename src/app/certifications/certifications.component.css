@@ -41,8 +41,10 @@
 
 .certifications-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
+    position: relative;
+    z-index: 2;
 }
 
 .certification-item {
@@ -479,5 +481,30 @@
 @media (max-width: 768px) {
     .certifications-section {
         margin: 80px 20px;
+        padding: 0;
+    }
+    
+    .certification-item {
+        padding: 20px;
+    }
+    
+    .cert-actions {
+        flex-direction: column;
+    }
+    
+    .btn-show-credential, .btn-view-certificate {
+        width: 100%;
+        flex: none;
+    }
+
+    .cert-thumbnail-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .cert-thumbnail {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
     }
 }
