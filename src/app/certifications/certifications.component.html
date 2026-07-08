@@ -1,0 +1,75 @@
+<section class="certifications-section" id="certifications">
+    <div class="certifications-header" [animateOnScroll]="'anim-slide-down'">
+        <h2>Licenses & certifications ({{ certifications.length }})</h2>
+    </div>
+
+    <div class="certifications-list">
+        <div class="certification-item" *ngFor="let cert of certifications; let i = index" 
+             [animateOnScroll]="'anim-fade-up'" [animDelay]="i * 100">
+            <div class="cert-header-row">
+                <div class="cert-logo-container">
+                    <div class="cert-logo-placeholder">
+                        <img [src]="cert.logo" alt="{{ cert.issuer }}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="fallback-logo" style="display: none;">{{ cert.issuer.charAt(0) }}</div>
+                    </div>
+                </div>
+                
+                <div class="cert-content">
+                    <h3 class="cert-title">{{ cert.title }}</h3>
+                    <p class="cert-issuer">{{ cert.issuer }}</p>
+                    <p class="cert-date">Issued {{ cert.issuedDate }}</p>
+                    <p class="cert-id" *ngIf="cert.credentialId">Credential ID {{ cert.credentialId }}</p>
+                </div>
+            </div>
+            
+            <div class="cert-body">
+                
+                <div class="cert-summary" *ngIf="cert.summary">
+                    <p>{{ cert.summary }}</p>
+                </div>
+
+                <div class="cert-actions">
+                    <a class="btn-show-credential" [href]="cert.credentialUrl" target="_blank" *ngIf="cert.credentialUrl">
+                        Show credential <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <button class="btn-view-certificate" (click)="openModal(cert)">
+                        <i class="fa-solid fa-eye"></i> View Certificate
+                    </button>
+                </div>
+
+                <div class="cert-skills" *ngIf="cert.skills">
+                    <i class="fa-regular fa-gem"></i> <span class="skills-text">{{ cert.skills }}</span>
+                </div>
+
+                <div class="cert-thumbnail-row" *ngIf="cert.certificateImage">
+                    <div class="cert-thumbnail">
+                        <img [src]="cert.certificateImage" alt="Certificate thumbnail" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                        <div class="fallback-thumbnail" style="display: none;"><i class="fa-solid fa-certificate"></i></div>
+                    </div>
+                    <span class="cert-thumbnail-title">{{ cert.title }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Image + Info Modal -->
+<div class="modal-overlay" *ngIf="selectedCertificate" [class.closing]="isClosing" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <span class="close-btn" (click)="closeModal()">&times;</span>
+        <div class="modal-body">
+            <div class="modal-image-container">
+                <img [src]="selectedCertificate.certificateImage" alt="Certificate" class="modal-image">
+            </div>
+            <div class="modal-info">
+                <h2>{{ selectedCertificate.title }}</h2>
+                <h3>{{ selectedCertificate.issuer }}</h3>
+                <p class="description">{{ selectedCertificate.summary }}</p>
+                <p class="date"><i class="fa-regular fa-calendar"></i> Issued {{ selectedCertificate.issuedDate }}</p>
+                <a class="btn-show-credential" [href]="selectedCertificate.credentialUrl" target="_blank" *ngIf="selectedCertificate.credentialUrl" style="margin-top: 15px;">
+                    Show credential <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

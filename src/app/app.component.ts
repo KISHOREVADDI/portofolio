@@ -12,6 +12,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
 import { TerminalComponent } from './terminal/terminal.component';
+import { CertificationsComponent } from './certifications/certifications.component';
 
 @Component({
   selector: 'app-root',
@@ -29,7 +30,8 @@ import { TerminalComponent } from './terminal/terminal.component';
     ContactComponent,
     FooterComponent,
     LoadingScreenComponent,
-    TerminalComponent
+    TerminalComponent,
+    CertificationsComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
