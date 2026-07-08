@@ -479,6 +479,11 @@
 }
 
 @media (max-width: 768px) {
+    .certifications-section::before,
+    .certifications-section::after {
+        display: none;
+    }
+    
     .certifications-section {
         margin: 80px 20px;
         padding: 0;
