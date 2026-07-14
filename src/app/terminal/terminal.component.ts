@@ -40,6 +40,7 @@ export class TerminalComponent implements AfterViewChecked, OnInit {
       '  <span class="cmd-name">contact</span>    — Get in touch',
       '  <span class="cmd-name">education</span>  — Academic details',
       '  <span class="cmd-name">experience</span> — Work experience',
+      '  <span class="cmd-name">internships</span>— Internship details',
       '  <span class="cmd-name">clear</span>      — Clear terminal',
     ],
     'whoami': [
@@ -54,9 +55,11 @@ export class TerminalComponent implements AfterViewChecked, OnInit {
       '<span class="cmd-name">Tools:</span>     Git, Postman, Docker, Kali Linux',
     ],
     'projects': [
-      '1. <strong>Mini E-Commerce Platform</strong>  — Angular + Spring Boot + MySQL',
-      '2. <strong>Hybrid File Transfer</strong>       — Secure file transfer w/ CyberSecurity',
-      '3. <strong>Portfolio Website</strong>          — Angular + Email.js + Vercel',
+      '1. <strong>Billing Management System</strong> — Angular + Spring Boot + MongoDB',
+      '2. <strong>Mini E-Commerce Platform</strong>  — Angular + Spring Boot + MySQL',
+      '3. <strong>Hybrid File Transfer</strong>       — Secure file transfer w/ CyberSecurity',
+      '4. <strong>Portfolio Website</strong>          — Angular + Email.js + Vercel',
+      '5. <strong>College Website</strong>            — Angular + HTML5 + CSS3',
     ],
     'contact': [
       'Email:    <a href="mailto:kishorevaddi1204@gmail.com" class="terminal-link">kishorevaddi1204@gmail.com</a>',
@@ -73,6 +76,13 @@ export class TerminalComponent implements AfterViewChecked, OnInit {
       '— Building and maintaining modern web applications',
       '— Implementing responsive UI and backend REST APIs',
       '— Passionate about crafting user-centric experiences',
+      '<br>',
+      '<strong>Intern - 1M1B Green Skills Academy</strong>',
+      '— Completed internship program',
+    ],
+    'internships': [
+      '<strong>1M1B Green Skills Academy</strong>',
+      '— Internship Certificate',
     ],
   };
 
