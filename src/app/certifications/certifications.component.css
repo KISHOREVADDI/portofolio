@@ -222,6 +222,8 @@
     flex-wrap: wrap;
     margin-bottom: 20px;
     margin-top: auto; /* pushes to bottom if height grows */
+    position: relative;
+    z-index: 10;
 }
 
 .btn-show-credential, .btn-view-certificate {

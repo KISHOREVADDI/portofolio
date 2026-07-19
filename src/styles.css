@@ -402,7 +402,7 @@ hr {
   margin-bottom: 15px;
 }
 
-.skills a {
+.skills span {
   display: inline-block;
   background: #e0e7ff;
   color: #1e3a8a;
@@ -414,7 +414,7 @@ hr {
   transition: background 0.3s;
 }
 
-.skills a:hover {
+.skills span:hover {
   background: #c7d2fe;
 }
 
