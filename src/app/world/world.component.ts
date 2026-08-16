@@ -20,7 +20,7 @@ export class WorldComponent {
       name: 'TryHackMe',
       icon: 'fa-solid fa-shield-halved',
       description: 'Cybersecurity learning platform',
-      link: 'https://kishorevaddi.github.io/tryhackmedashboard/'
+      link: 'https://tryhackme.com/p/kishore1204'
     },
     {
       name: 'LinkedIn',

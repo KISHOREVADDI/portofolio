@@ -77,12 +77,15 @@ export class TerminalComponent implements AfterViewChecked, OnInit {
       '— Implementing responsive UI and backend REST APIs',
       '— Passionate about crafting user-centric experiences',
       '<br>',
-      '<strong>Intern - 1M1B Green Skills Academy</strong>',
-      '— Completed internship program',
+      '<strong>Full Stack Developer Intern — SmartBridge Educational Services</strong>',
+      '— 2-Month MERN Stack Virtual Internship in collaboration with APSCHE & MongoDB',
+      '<br>',
+      '<strong>AI for Sustainability Intern — 1M1B Green Skills Academy</strong>',
+      '— Virtual Internship supported by AICTE in collaboration with IBM SkillsBuild',
     ],
     'internships': [
-      '<strong>1M1B Green Skills Academy</strong>',
-      '— Internship Certificate',
+      '1. <strong>SmartBridge Educational Services (APSCHE)</strong> — Full Stack Developer (MERN Stack) Internship',
+      '2. <strong>1M1B Green Skills Academy (IBM SkillsBuild)</strong> — AI for Sustainability Virtual Internship',
     ],
   };
 

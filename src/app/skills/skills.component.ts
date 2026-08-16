@@ -22,7 +22,7 @@ export class SkillsComponent {
     },
     {
       category: 'Tools & Security',
-      items: ['Kali Linux', 'Burp Suite', 'Postman', 'VS Code', 'GitHub', 'Firebase', 'Git', 'Nmap']
+      items: ['Kali Linux', 'Splunk', 'Burp Suite', 'Postman', 'VS Code', 'GitHub', 'Firebase', 'Git', 'Nmap']
     }
   ];
 }

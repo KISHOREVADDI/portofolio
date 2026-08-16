@@ -14,12 +14,20 @@ import { SafeUrlPipe } from '../shared/safe-url.pipe';
 export class AchievementsComponent {
   internships = [
     {
-      title: 'Internship Certificate',
+      title: 'Full Stack Developer (MERN Stack)',
+      event: 'SmartBridge Virtual Internship',
+      description: 'Successfully completed the 2-month (120 hrs) Short-Term Virtual Internship Program in Full Stack Web Development (MERN Stack) organized by SmartBridge in collaboration with APSCHE and MongoDB.',
+      date: 'Aug 2026',
+      organizer: 'SmartBridge & APSCHE',
+      image: 'assets/images/SmartBridge Intern.png'
+    },
+    {
+      title: 'AI for Sustainability Internship',
       event: '1M1B Green Skills Academy',
-      description: 'Successfully completed the Green Skills Academy program, gaining hands-on experience in sustainability, green technologies, and driving social impact.',
-      date: 'Recent',
-      organizer: '1M1B',
-      image: 'assets/images/1M1B Intern.pdf' 
+      description: 'Successfully completed the AI for Sustainability Virtual Internship organized by 1M1B, supported by AICTE in collaboration with IBM SkillsBuild. Gained practical experience in AI, Agentic AI, RAG systems, and sustainability concepts.',
+      date: 'May 2026 - Jun 2026',
+      organizer: '1M1B & IBM SkillsBuild',
+      image: 'assets/images/1M1B Intern.png'
     }
   ];
 
