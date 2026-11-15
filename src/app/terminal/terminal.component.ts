@@ -41,6 +41,7 @@ export class TerminalComponent implements AfterViewChecked, OnInit {
       '  <span class="cmd-name">education</span>  — Academic details',
       '  <span class="cmd-name">experience</span> — Work experience',
       '  <span class="cmd-name">internships</span>— Internship details',
+      '  <span class="cmd-name">certifications</span> — Licenses & certs',
       '  <span class="cmd-name">clear</span>      — Clear terminal',
     ],
     'whoami': [
@@ -82,10 +83,24 @@ export class TerminalComponent implements AfterViewChecked, OnInit {
       '<br>',
       '<strong>AI for Sustainability Intern — 1M1B Green Skills Academy</strong>',
       '— Virtual Internship supported by AICTE in collaboration with IBM SkillsBuild',
+      '<br>',
+      '<strong>AWS & Java Full Stack Intern — TECHWING</strong>',
+      '— 3-Month AWS+JFS Internship with hands-on cloud & full-stack development',
     ],
     'internships': [
       '1. <strong>SmartBridge Educational Services (APSCHE)</strong> — Full Stack Developer (MERN Stack) Internship',
       '2. <strong>1M1B Green Skills Academy (IBM SkillsBuild)</strong> — AI for Sustainability Virtual Internship',
+      '3. <strong>TECHWING</strong> — AWS + JFS (Java Full Stack) Internship',
+    ],
+    'certifications': [
+      '1. <strong>Foundations of User Experience (UX) Design</strong> — Coursera',
+      '2. <strong>Designing User Interfaces & Experiences (UI/UX)</strong> — IBM (Coursera)',
+      '3. <strong>Security Operations Center (SOC)</strong> — Cisco (Coursera)',
+    ],
+    'certs': [
+      '1. <strong>Foundations of User Experience (UX) Design</strong> — Coursera',
+      '2. <strong>Designing User Interfaces & Experiences (UI/UX)</strong> — IBM (Coursera)',
+      '3. <strong>Security Operations Center (SOC)</strong> — Cisco (Coursera)',
     ],
   };
 

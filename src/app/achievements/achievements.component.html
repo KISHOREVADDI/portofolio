@@ -1,35 +1,85 @@
 <section class="achievements" id="achievements">
-    <p [animateOnScroll]="'anim-slide-down'" [animDelay]="0">ACHIEVEMENTS</p>
-    <h1 [animateOnScroll]="'anim-fade-up'" [animDelay]="100">Internship Certificates</h1>
+    <p class="section-tag" [animateOnScroll]="'anim-slide-down'" [animDelay]="0">ACHIEVEMENTS</p>
+    <h1 class="section-title" [animateOnScroll]="'anim-fade-up'" [animDelay]="100">Internship Certificates</h1>
+    
     <div class="achievements-container">
         <div *ngFor="let achievement of internships; let i = index" class="achievement-card"
-             [animateOnScroll]="i % 2 === 0 ? 'anim-fade-left' : 'anim-fade-right'" [animDelay]="i * 120">
+             [animateOnScroll]="'anim-fade-up'" [animDelay]="i * 120">
 
+            <!-- Card Header: Logo + Event Title & Role -->
+            <div class="card-header">
+                <div class="event-logo-placeholder">
+                    <img *ngIf="achievement.logo" [src]="achievement.logo" alt="{{ achievement.event }} Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="fallback-logo" [style.display]="achievement.logo ? 'none' : 'flex'">{{ achievement.event.charAt(0) }}</div>
+                </div>
+                <div class="header-info">
+                    <h3 class="event-name" [title]="achievement.event">{{ achievement.event }}</h3>
+                    <span class="role-pill">{{ achievement.title }}</span>
+                </div>
+            </div>
+
+            <!-- Card Body -->
             <div class="achievement-details">
-                <h3>{{ achievement.event }}</h3>
-                <h4>{{ achievement.title }}</h4>
                 <p class="description">{{ achievement.description }}</p>
-                <p class="organizer"><i class="fa-solid fa-building-columns"></i> {{ achievement.organizer }}</p>
-                <p class="date"><i class="fa-regular fa-calendar"></i> {{ achievement.date }}</p>
-                <button (click)="openModal(achievement)" class="btn-view"><i class="fa-solid fa-eye"></i> View
-                    Certificate</button>
+
+                <div class="meta-row">
+                    <span class="meta-item"><i class="fa-solid fa-building-columns"></i> {{ achievement.organizer }}</span>
+                    <span class="meta-item"><i class="fa-regular fa-calendar"></i> {{ achievement.date }}</span>
+                </div>
+
+                <!-- Certificate Preview Banner -->
+                <div class="achievement-preview" *ngIf="achievement.image" (click)="openModal(achievement)" title="Click to view full certificate">
+                    <img *ngIf="!isPdf(achievement.image)" [src]="achievement.image" alt="{{ achievement.title }} Certificate" class="preview-img">
+                    <div class="preview-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Click to Preview</span>
+                    </div>
+                </div>
+
+                <!-- Bottom Button: Pinned to bottom -->
+                <button (click)="openModal(achievement)" class="btn-view">
+                    <i class="fa-solid fa-eye"></i> View Certificate
+                </button>
             </div>
         </div>
     </div>
 
-    <h1 [animateOnScroll]="'anim-fade-up'" [animDelay]="100" style="margin-top: 50px;">Participation Certificates</h1>
-    <div class="achievements-container">
+    <h1 class="section-title" [animateOnScroll]="'anim-fade-up'" [animDelay]="100" style="margin-top: 70px;">Participation Certificates</h1>
+    <div class="participations-container">
         <div *ngFor="let achievement of participations; let i = index" class="achievement-card"
-             [animateOnScroll]="i % 2 === 0 ? 'anim-fade-left' : 'anim-fade-right'" [animDelay]="i * 120">
+             [animateOnScroll]="'anim-fade-up'" [animDelay]="i * 120">
+
+            <!-- Card Header: Logo + Event Title & Role -->
+            <div class="card-header">
+                <div class="event-logo-placeholder">
+                    <img *ngIf="achievement.logo" [src]="achievement.logo" alt="{{ achievement.event }} Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="fallback-logo" [style.display]="achievement.logo ? 'none' : 'flex'">{{ achievement.event.charAt(0) }}</div>
+                </div>
+                <div class="header-info">
+                    <h3 class="event-name">{{ achievement.event }}</h3>
+                    <span class="role-pill">{{ achievement.title }}</span>
+                </div>
+            </div>
 
             <div class="achievement-details">
-                <h3>{{ achievement.event }}</h3>
-                <h4>{{ achievement.title }}</h4>
                 <p class="description">{{ achievement.description }}</p>
-                <p class="organizer"><i class="fa-solid fa-building-columns"></i> {{ achievement.organizer }}</p>
-                <p class="date"><i class="fa-regular fa-calendar"></i> {{ achievement.date }}</p>
-                <button (click)="openModal(achievement)" class="btn-view"><i class="fa-solid fa-eye"></i> View
-                    Certificate</button>
+
+                <div class="meta-row">
+                    <span class="meta-item"><i class="fa-solid fa-building-columns"></i> {{ achievement.organizer }}</span>
+                    <span class="meta-item"><i class="fa-regular fa-calendar"></i> {{ achievement.date }}</span>
+                </div>
+
+                <div class="achievement-preview" *ngIf="achievement.image" (click)="openModal(achievement)" title="Click to view full certificate">
+                    <img *ngIf="!isPdf(achievement.image)" [src]="achievement.image" alt="{{ achievement.title }} Certificate" class="preview-img">
+                    <div class="preview-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Click to Preview</span>
+                    </div>
+                </div>
+
+                <button (click)="openModal(achievement)" class="btn-view">
+                    <i class="fa-solid fa-eye"></i> View Certificate
+                </button>
             </div>
         </div>
     </div>
@@ -37,7 +87,7 @@
     <!-- Image + Info Modal -->
     <div class="modal-overlay" *ngIf="selectedAchievement" [class.closing]="isClosing" (click)="closeModal()">
         <div class="modal-content" (click)="$event.stopPropagation()">
-            <span class="close-btn" (click)="closeModal()">&times;</span>
+            <span class="close-btn" (click)="closeModal()" aria-label="Close modal">&times;</span>
             <div class="modal-body">
                 <div class="modal-image-container">
                     <img *ngIf="!isPdf(selectedAchievement.image)" [src]="selectedAchievement.image" alt="Certificate" class="modal-image">
@@ -47,8 +97,7 @@
                     <h2>{{ selectedAchievement.event }}</h2>
                     <h3>{{ selectedAchievement.title }}</h3>
                     <p class="description">{{ selectedAchievement.description }}</p>
-                    <p class="organizer"><i class="fa-solid fa-building-columns"></i> {{ selectedAchievement.organizer
-                        }}</p>
+                    <p class="organizer"><i class="fa-solid fa-building-columns"></i> {{ selectedAchievement.organizer }}</p>
                     <p class="date"><i class="fa-regular fa-calendar"></i> {{ selectedAchievement.date }}</p>
                 </div>
             </div>
